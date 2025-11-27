@@ -10,7 +10,7 @@ if (registerForm) {
       password: document.getElementById("password").value
     };
 
-    const res = await fetch("http://localhost:3000/register", {
+    const res = await fetch("https://blogbackend-7yd4.onrender.com/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user)
@@ -37,7 +37,7 @@ if (loginForm) {
       password: document.getElementById("password").value
     };
 
-    const res = await fetch("http://localhost:3000/login", {
+    const res = await fetch("https://blogbackend-7yd4.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user)
@@ -55,7 +55,7 @@ if (loginForm) {
 
 /* FETCH BLOGS */
 async function loadBlogs() {
-  const res = await fetch("http://localhost:3000/blogs");
+  const res = await fetch("https://blogbackend-7yd4.onrender.com/blogs");
   const blogs = await res.json();
 
   const currentUser = Number(JSON.parse(localStorage.getItem("user"))?.id);
@@ -85,7 +85,7 @@ async function loadBlogs() {
 async function likeBlog(id) {
   const currentUser = Number(JSON.parse(localStorage.getItem("user"))?.id);
 
-  const res = await fetch(`http://localhost:3000/blogs/${id}/like`, {
+  const res = await fetch(`https://blogbackend-7yd4.onrender.com/blogs/${id}/like`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ user: currentUser })
@@ -113,7 +113,7 @@ document.getElementById("createBlogForm")?.addEventListener("submit", async func
   const user = JSON.parse(localStorage.getItem("user"));
   const userId = user?.id;
 
-  const res = await fetch("http://localhost:3000/blogs/add", {
+  const res = await fetch("https://blogbackend-7yd4.onrender.comblogs/add", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -168,7 +168,7 @@ async function loadProfile() {
   const pUsername = document.getElementById("p_username");
   if (pUsername) pUsername.innerText = user.username;
 
-  const res = await fetch(`http://localhost:3000/profile/${user.id}`);
+  const res = await fetch(`https://blogbackend-7yd4.onrender.com/profile/${user.id}`);
   const data = await res.json();
 
   const pBlogs = document.getElementById("p_blogs");
@@ -224,7 +224,7 @@ function saveBlog(id) {
     return;
   }
 
-  fetch(`http://localhost:3000/blogs/${id}`, {
+  fetch(`https://blogbackend-7yd4.onrender.com/blogs/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ title: newTitle, content: newContent })
@@ -240,7 +240,7 @@ function saveBlog(id) {
 function deleteBlog(id) {
   if (!confirm("Are you sure you want to delete this blog?")) return;
 
-  fetch(`http://localhost:3000/blogs/${id}`, { method: "DELETE" })
+  fetch(`https://blogbackend-7yd4.onrender.com  /blogs/${id}`, { method: "DELETE" })
     .then(res => res.text())
     .then(msg => {
       alert(msg);
