@@ -298,6 +298,14 @@ body {
 /* ----------------- MOBILE RESPONSIVE ----------------- */
 @media (max-width: 768px) {
 
+  .container,
+  .create-container,
+  .form-container {
+    width: 95% !important;
+    margin: 20px auto !important;
+  }
+
+}
   /* Navbar adjustments */
   .navbar {
     flex-direction: column;
