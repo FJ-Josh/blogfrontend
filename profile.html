@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.edit-btn, .delete-btn {
+  padding: 6px 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+
+.edit-btn {
+  background-color: #ff9800; /* orange-ish red */
+}
+
+.delete-btn {
+  background-color: #e53935; /* strong red */
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2 class="logo">My Blog</h2>
+
+  <div class="right-side">
+    <button id="createBtn" class="create-btn">+ Create Blog</button>
+
+    <div class="menu">
+      <div id="hamburger" class="hamburger">&#9776;</div>
+
+      <div id="dropdown" class="dropdown hidden">
+        <a href="profile.html">User Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- USERNAME -->
+<h1 class="profile-username" id="p_username"></h1>
+
+<!-- PROFILE CARDS -->
+<div class="profile-cards">
+
+  <div class="p-card">
+    <h3>Total Blogs</h3>
+    <p id="p_blogs" class="p-value">0</p>
+  </div>
+
+  <div class="p-card">
+    <h3>Likes Received</h3>
+    <p id="p_likes" class="p-value">0</p>
+  </div>
+
+
+
+</div>
+
+<!-- USER BLOGS LIST -->
+<h2 class="your-blogs-title">Your Blogs</h2>
+<div id="userBlogs" class="user-blog-list"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog Hub - Share & Read Amazing Blogs</title>
+<meta name="description" content="Read and publish blogs on various topics. Join our community of bloggers.">
+<meta name="keywords" content="blogs, write blog, tech blogs, travel blogs, my blog">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <h2 class="logo">My Blog</h2>
+
+  <div class="right-side">
+    <button id="createBtn" class="create-btn">+ Create Blog</button>
+
+    <div class="menu">
+      <div id="hamburger" class="hamburger">&#9776;</div>
+
+      <div id="dropdown" class="dropdown hidden">
+        <a href="profile.html">User Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+  <div class="container">
+    <h3>All Blogs</h3>
+    <div id="blogList"></div>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
