@@ -113,7 +113,7 @@ document.getElementById("createBlogForm")?.addEventListener("submit", async func
   const user = JSON.parse(localStorage.getItem("user"));
   const userId = user?.id;
 
-  const res = await fetch("https://blogbackend-7yd4.onrender.comblogs/add", {
+  const res = await fetch("https://blogbackend-7yd4.onrender.com/blogs/add", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -240,7 +240,7 @@ function saveBlog(id) {
 function deleteBlog(id) {
   if (!confirm("Are you sure you want to delete this blog?")) return;
 
-  fetch(`https://blogbackend-7yd4.onrender.com  /blogs/${id}`, { method: "DELETE" })
+  fetch(`https://blogbackend-7yd4.onrender.com/blogs/${id}`, { method: "DELETE" })
     .then(res => res.text())
     .then(msg => {
       alert(msg);
